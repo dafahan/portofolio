@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 
 const NavLink = ({ link }) => {
   const pathName = usePathname();
-
+  const firstPathName = pathName.split("/")[1];
   return (
     <Link
       className={`font-futura rounded p-1 hover:opacity-100 text-sm ${
-        pathName === link.url ? "opacity-100" : "opacity-50"
+        firstPathName === link.url.substring(1) ? "opacity-100" : "opacity-50"
       } `}
       href={link.url}
     >

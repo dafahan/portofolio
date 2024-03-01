@@ -7,12 +7,17 @@ import { usePathname } from "next/navigation";
 
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname();
+  const firstPathName = pathName.split("/")[1];
 
   return (
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="w-screen h-screen bg-gradient-to-b from-blue-100 to-red-100"
+        className={`w-screen h-screen ${
+          pathName === "/project"
+            ? "bg-gradient-to-b from-blue-100 to-white"
+            : "bg-gradient-to-b from-blue-100 to-red-100"
+        } `}
       >
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40"
@@ -21,7 +26,7 @@ const TransitionProvider = ({ children }) => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
         <motion.div
-          className={`fixed m-auto top-0 font-helvetica p-10 bottom-0 left-0 right-0 text-white sm:text-8xl cursor-default z-50 w-fit h-fit border-4 border-white border-solid rounded-lg`}
+          className={`fixed m-auto top-0 p-10 bottom-0 left-0 right-0 text-white sm:text-8xl cursor-default z-50 w-fit h-fit`}
           initial={{ opacity: 1 }}
           animate={{
             opacity: 0,
@@ -32,10 +37,10 @@ const TransitionProvider = ({ children }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {pathName.substring(1) === ""
+          {firstPathName.substring(1) === ""
             ? "Dafahan"
-            : pathName.substring(1).charAt(0).toUpperCase() +
-              pathName.substring(1).slice(1)}
+            : firstPathName.charAt(0).toUpperCase() +
+              firstPathName.substring(1)}
         </motion.div>
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30"

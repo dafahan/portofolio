@@ -7,7 +7,7 @@ import NavLink from "./navLink";
 const links = [
   { url: "/", title: "HOME" },
   { url: "/about", title: "ABOUT" },
-  { url: "/portofolio", title: "PROJECT" },
+  { url: "/project", title: "PROJECTS" },
   { url: "/contact", title: "CONTACT" },
 ];
 const Navbar = () => {
@@ -62,7 +62,7 @@ const Navbar = () => {
     },
   };
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 text-xl">
+    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:pl-20 text-xl">
       {/* LOGO */}
       <div className="md:hidden lg:flex justify-center">
         <Link

@@ -14,7 +14,19 @@ module.exports = {
       },
       fontFamily: {
         futura: ["Futura", "sans-serif"],
+        helvetica: ["Helvetica", "sans-serif"],
+        gotham: ["Gotham"],
       },
+      animation: {
+        "loop-scroll": "loop-scroll 10s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-100%)" },
+        },
+      },
+      
     },
   },
   plugins: [],

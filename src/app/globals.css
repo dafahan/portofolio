@@ -1,7 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "@fortawesome/fontawesome-svg-core/styles.css";
+
 @font-face {
-    font-family: Futura;
-    src: url('/fonts/Futura.ttf') format('truetype');
-  }
+  font-family: Futura;
+  src: url("/fonts/Futura.ttf") format("truetype");
+}
+@font-face {
+  font-family: Gotham;
+  src: url("/fonts/Gotham.otf") format("truetype");
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: none;
+}
