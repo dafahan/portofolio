@@ -13,7 +13,7 @@ const TransitionProvider = ({ children }) => {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className={`w-screen h-screen ${
+        className={`w-screen h-screen  ${
           pathName === "/project"
             ? "bg-gradient-to-b from-blue-100 to-white"
             : "bg-gradient-to-b from-blue-100 to-red-100"
@@ -50,7 +50,7 @@ const TransitionProvider = ({ children }) => {
         <div className="h-24">
           <Navbar />
         </div>
-        <div className="h-[calc(100vh-6rem)]">{children}</div>
+        <div className="h-[calc(100vh-6rem)] ">{children}</div>
       </div>
     </AnimatePresence>
   );

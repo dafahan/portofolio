@@ -1,5 +1,5 @@
 "use client";
-import Brain from "../components/brain";
+import Brain from "@/app/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -27,7 +27,6 @@ const skills = [
 ];
 const AboutPage = () => {
   const containerRef = useRef();
-  const [readMore, setReadMore] = useState(false);
   const { scrollYProgress } = useScroll({ container: containerRef });
   const achievementRef = useRef();
   const skillRef = useRef();
@@ -317,7 +316,7 @@ const AboutPage = () => {
 
           {/* ACHIEVEMENT CONTAINER */}
           <div
-            className=" gap-12 justify-center pb-24"
+            className=" gap-12 justify-center pb-16 "
             ref={achievementRef}
             id="achievement"
           >
@@ -326,7 +325,7 @@ const AboutPage = () => {
               initial={{ x: "-200px" }}
               animate={isAchievementRefInView ? { x: "0" } : {}}
               transition={{ delay: 0.2 }}
-              className="font-bold text-2xl mb-4"
+              className="font-bold text-2xl mb-4 sticky top-0 "
             >
               ACHEIEVEMENT & CERTIFICATION
             </motion.h1>
@@ -334,7 +333,7 @@ const AboutPage = () => {
             <motion.div
               initial={{ x: "-200px" }}
               animate={isAchievementRefInView ? { x: "0" } : {}}
-              className="overflow-hidden h-[70%]"
+              className="overflow-hidden h-[70%] relative top-12 sm:top-24 lg:top-12  "
             >
               <ul className="max-w-md  animate-loop-scroll">
                 <li className="pb-3 sm:pb-4">
@@ -352,7 +351,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faTrophy} />
+                      <FontAwesomeIcon className="pt-2" icon={faTrophy} />
                       <h1>1st OSAMAKOM Computer Olympiad 2021</h1>
                     </div>
 
@@ -364,7 +363,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Meta Back-End Developer</h1>
                     </div>
 
@@ -376,7 +375,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Google Cybersecurity Coursera</h1>
                     </div>
 
@@ -388,7 +387,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>
                         Assistant lecturer on the basics of programming and the
                         basic structure of algorithms
@@ -404,7 +403,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Presenter for internal training, text-based games</h1>
                     </div>
 
@@ -416,7 +415,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faRibbon} />
+                      <FontAwesomeIcon className="pt-2" icon={faRibbon} />
                       <h1>
                         Competitive Programming Participants GEMASTIK 2022
                       </h1>
@@ -430,7 +429,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faRibbon} />
+                      <FontAwesomeIcon className="pt-2" icon={faRibbon} />
                       <h1> Data Science Participants GEMASTIK 2022</h1>
                     </div>
 
@@ -446,7 +445,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faTrophy} />
+                      <FontAwesomeIcon className="pt-2" icon={faTrophy} />
                       <h1>1st KSN-K Computer 2021</h1>
                     </div>
 
@@ -459,7 +458,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faTrophy} />
+                      <FontAwesomeIcon className="pt-2" icon={faTrophy} />
                       <h1>1st OSAMAKOM Computer Olympiad 2021</h1>
                     </div>
 
@@ -472,7 +471,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Meta Back-End Developer</h1>
                     </div>
 
@@ -485,7 +484,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Google Cybersecurity Coursera</h1>
                     </div>
 
@@ -498,7 +497,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>
                         Assistant lecturer on the basics of programming and the
                         basic structure of algorithms
@@ -514,7 +513,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faCertificate} />
+                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Presenter for internal training, text-based games</h1>
                     </div>
 
@@ -527,7 +526,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faRibbon} />
+                      <FontAwesomeIcon className="pt-2" icon={faRibbon} />
                       <h1>
                         Competitive Programming Participants GEMASTIK 2022
                       </h1>
@@ -542,7 +541,7 @@ const AboutPage = () => {
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon  className="pt-2" icon={faRibbon} />
+                      <FontAwesomeIcon className="pt-2" icon={faRibbon} />
                       <h1> Data Science Participants GEMASTIK 2022</h1>
                     </div>
 

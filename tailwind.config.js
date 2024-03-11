@@ -26,8 +26,7 @@ module.exports = {
           to: { transform: "translateY(-100%)" },
         },
       },
-      
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

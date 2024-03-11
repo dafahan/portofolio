@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import Card from "../components/card";
 import Link from "next/link";
@@ -96,11 +96,11 @@ const ProjectPage = () => {
               MORE WORK
             </div>
             <div
-              class="absolute bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 hidden"
+              className="absolute bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 hidden"
               role="alert"
               ref={alert}
             >
-              <p class="text-sm">
+              <p className="text-sm cursor-not-allowed">
                 {"sorry it's currently under development :("}
               </p>
             </div>
@@ -161,7 +161,7 @@ const ProjectPage = () => {
                 Dafahan.
               </h1>
               <p className="font-thin text-white absolute bottom-4 left-8">
-                2024 Dafahan. All rights reserved
+                2021-PRESENT @ Dafahan
               </p>
             </div>
             <div className="flex w-full text-white justify-between ">

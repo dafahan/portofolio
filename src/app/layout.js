@@ -4,15 +4,16 @@ import TransitionProvider from "./components/transitionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata = {
-  title: "Dafahan | Apakek",
-  description: "my portofolio",
+  title: "Dafahan | dev",
+  description: "my portfolio",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>

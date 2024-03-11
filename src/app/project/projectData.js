@@ -4,10 +4,27 @@ const items = [
   {
     id: 0,
     color: "#90a4b0",
-    title: "Portofolio",
-    desc: "It's me , Dafahan",
-    img: "/projectImages/1.png",
+    title: "BSI LAMPUNG PLANNING",
+    desc: "Sharia planning and calculations",
+    img: "/projectImages/bsi.png",
     link: "https://lama.dev",
+    demo: "https://dafahan.github.io/BSI",
+    source: "https://github.com/dafahan/BSI",
+    fulldesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id\
+    sollicitudin enim. Donec dictum purus ut mi feugiat mattis. Fusce.\
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id\
+    sollicitudin enim. Donec dictum purus ut mi feugiat mattis. Fusce.",
+    slides: [
+      "/projectImages/bsi1.png",
+      "/projectImages/bsi2.png",
+      "/projectImages/bsi3.png",
+      "/projectImages/bsi4.png",
+    ],
+    stack: [
+      "https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss&style=flat",
+      "https://img.shields.io/badge/figma-17181B?&logo=figma&style=flat",
+    ],
   },
   {
     id: 1,

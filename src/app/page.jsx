@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import TextAnim from "./components/textAnim";
+import Link from "next/link";
 
 const Homepage = () => {
   return (
@@ -24,7 +25,7 @@ const Homepage = () => {
           />
         </div>
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
+        <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center select-none">
           {/* TITLE */}
           <h1 className="text-4xl md:text-6xl font-bold font-futura">
             <TextAnim text="Hi, I'am Dafahan" dur={5} />
@@ -39,12 +40,19 @@ const Homepage = () => {
           </p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
-            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
-              View My Work
-            </button>
-            <button className="p-4 rounded-lg ring-1 ring-black">
+            <Link
+              target="_blank"
+              href="https://www.canva.com/design/DAF-ogw5qSM/t_1oMxAsa3JNBzBvU3Askw/edit?utm_content=DAF-ogw5qSM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+              className="flex p-4 rounded-lg ring-1 w-32 justify-center cursor-pointer ring-black bg-black text-white hover:scale-90 duration-500 transition-all"
+            >
+              Resume
+            </Link>
+            <Link
+              href="contact"
+              className="flex p-4 rounded-lg ring-1 w-32 justify-center cursor-pointer ring-black hover:scale-90 duration-500 transition-all"
+            >
               Contact Me
-            </button>
+            </Link>
           </div>
         </div>
       </div>

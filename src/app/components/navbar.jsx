@@ -62,20 +62,20 @@ const Navbar = () => {
     },
   };
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:pl-20 text-xl">
+    <div className="h-full flex items-center md:justify-center justify-between lg:justify-between px-4 sm:px-8 md:px-12 lg:pl-20 text-xl select-none">
       {/* LOGO */}
       <div className="md:hidden lg:flex justify-center">
         <Link
           href="/"
           className="text-sm rounded-md p-1 font-semibold flex items-center justify-center"
         >
-          <h1 className=" text-2xl font-bold text-gray-800 mr-1 cursor-pointer font-helvetica italic">
+          <h1 className=" text-2xl font-bold text-gray-800  cursor-pointer font-helvetica italic">
             Dafahan
           </h1>
         </Link>
       </div>
       {/* LINKS */}
-      <div className="hidden md:flex gap-4 w-1/3 z-10">
+      <div className="hidden md:flex gap-4 z-10 lg:pr-8">
         {links.map((link) => (
           <NavLink link={link} key={link.title} />
         ))}
