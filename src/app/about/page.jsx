@@ -8,7 +8,7 @@ import {
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 const skills = [
   "Javascript",
   "TypeScript",
@@ -203,7 +203,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    As a participant , I'm diving into AI, IoT, and C&P
+                    As a participant , I&apos;m diving into AI, IoT, and C&P
                     technologies.{" "}
                   </div>
                   {/* JOB DATE */}
