@@ -11,7 +11,6 @@ import Link from "next/link";
 
 function Page() {
   const controls = useAnimationControls();
-  const frame = useRef();
   const pathName = usePathname();
   const id = pathName.split("/")[2];
   const project = items[id];
@@ -19,39 +18,25 @@ function Page() {
   const slides = project.slides;
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prevSlide = useCallback(async () => {
+  const prevSlide = async () => {
     await controls.start("hidden");
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
     controls.start("visible");
-  }, [currentIndex, setCurrentIndex, controls, slides.length]);
+  };
 
-  const nextSlide = useCallback(async () => {
+  const nextSlide = async () => {
     await controls.start("hidden");
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     controls.start("visible");
-  }, [currentIndex, setCurrentIndex, controls, slides.length]);
+  };
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
-
-  useEffect(() => {
-    const frameElement = frame.current;
-    if (frameElement) {
-      frameElement.classList.add("fade-animation");
-      const handleTransitionEnd = () => {
-        frameElement.classList.remove("fade-animation");
-      };
-      frameElement.addEventListener("transitionend", handleTransitionEnd);
-      return () => {
-        frameElement.removeEventListener("transitionend", handleTransitionEnd);
-      };
-    }
-  }, [currentIndex]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -104,13 +89,10 @@ function Page() {
         <div className="flex flex-col max-w-[1400px] h-[780px] w-full m-auto px-4 relative group text-center ">
           <motion.div
             variants={wrapperVariants}
-            initial="visible"
             animate={controls}
-            exit="exit"
             className="w-full h-full lg:max-h-[50vh] max-h-[40vh] sm:max-h-[45vh]  rounded-2xl flex justify-center items-center select-none flex"
           >
             <Image
-              ref={frame}
               alt=""
               src={slides[currentIndex]}
               height={200}
