@@ -17,6 +17,7 @@
     "flowbite": "^2.3.0",
     "framer-motion": "^11.0.8",
     "next": "^14.2.0-canary.2",
+    "promise": "^8.3.0",
     "react": "18",
     "react-dom": "18",
     "react-icons": "^5.0.1"

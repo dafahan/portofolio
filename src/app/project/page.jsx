@@ -1,9 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import Card from "../components/card";
+import Card from "@/app/components/card";
 import Link from "next/link";
-import items from "./projectData";
+import items from "@/app/project/projectData";
 
 const ProjectPage = () => {
   const alert = useRef(null);
@@ -132,7 +132,7 @@ const ProjectPage = () => {
                 </h6>
                 <p className="font-light font-xs/[3px]">
                   We know that exceptional website experiences are a blend of
-                  the right message and the right technology. That's why our
+                  the right message and the right technology. That&apos;s why our
                   interactive design approach focuses on usability,
                   accessibility impact, and achieving results.
                 </p>
