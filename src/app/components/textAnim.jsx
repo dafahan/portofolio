@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
-import CursorBlinker from "./CursorBlinker";
+import CursorBlinker from "@/app/components/cursorBlinker";
 
 export default function TextAnim({ text, dur }) {
   const count = useMotionValue(0);
