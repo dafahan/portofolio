@@ -1,7 +1,7 @@
 "use client";
 import { motion, useAnimationControls } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled, RxDot, RxGithubLogo } from "react-icons/rx";
 import { RiCodeView } from "react-icons/ri";
@@ -18,21 +18,21 @@ function Page() {
   const slides = project.slides;
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prevSlide = async () => {
+  const prevSlide = useCallback(async () => {
     await controls.start("hidden");
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
     controls.start("visible");
-  };
+  },[controls,currentIndex,slides.length]);
 
-  const nextSlide = async () => {
+  const nextSlide = useCallback(async () => {
     await controls.start("hidden");
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     controls.start("visible");
-  };
+  },[controls,currentIndex,slides.length]);
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
@@ -92,13 +92,18 @@ function Page() {
             animate={controls}
             className="w-full h-full lg:max-h-[50vh] max-h-[40vh] sm:max-h-[45vh]  rounded-2xl flex justify-center items-center select-none flex"
           >
-            <Image
-              alt=""
-              src={slides[currentIndex]}
-              height={200}
-              width={1000}
-              className="object-contain duration-500 h-full "
-            ></Image>
+            {slides.map((slide, slideIndex) => (
+              <Image
+                key={slideIndex}
+                alt=""
+                src={slides[slideIndex]}
+                height={200}
+                width={1000}
+                className={`object-contain duration-500 h-full ${
+                  currentIndex === slideIndex ? "" : "hidden"
+                }`}
+              ></Image>
+            ))}
           </motion.div>
           {/* Left Arrow */}
           <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 lg:left-20 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
@@ -131,11 +136,11 @@ function Page() {
               {stack.map((item) => (
                 <Image
                   width={80}
-                  height={0}
+                  height={20}
                   key={item}
                   src={item}
                   alt=""
-                  className="hover:scale-110 h-6 object-contain"
+                  className="hover:scale-110 h-6 rounded "
                 ></Image>
               ))}
             </div>
