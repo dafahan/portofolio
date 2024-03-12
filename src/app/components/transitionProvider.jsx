@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname();
   const firstPathName = pathName.split("/")[1];
-
+  console.log(firstPathName);
   return (
     <AnimatePresence mode="wait">
       <div

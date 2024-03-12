@@ -12,9 +12,8 @@ import { useRef } from "react";
 const skills = [
   "Javascript",
   "TypeScript",
-  "React.js",
-  "Next.js",
-  "SCSS",
+  "React.Js",
+  "Next.Js",
   "Go",
   "Kotlin",
   "React Native",
@@ -24,6 +23,11 @@ const skills = [
   "Git",
   "Figma",
   "SQL",
+  "TensorFlow",
+  "Odoo",
+  "Electron.Js",
+
+  "Flask",
 ];
 const AboutPage = () => {
   const containerRef = useRef();
@@ -65,14 +69,16 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-              reiciendis numquam! Voluptas voluptatibus obcaecati dolore itaque
-              suscipit! Vel doloremque numquam quam nihil.
+              My passion for software lies with dreaming up ideas and making
+              them come true. I take great care in experience, architecture, and
+              code quality of the things I build. I am also interested in
+              machine learning and embebed system . Outside of programming, I
+              love traveling. I like learning new things and visiting places
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              “Be the change that you wish to see in the world.” ― Mahatma
+              Gandhi
             </span>
             {/* BIOGRAPHY SIGN SVG*/}
             <div className="self-end">
@@ -212,7 +218,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Apple
+                    Samsung Electronics Indonesia - Skilvul
                   </div>
                 </div>
                 {/* CENTER */}
@@ -372,18 +378,7 @@ const AboutPage = () => {
                     </div>
                   </div>
                 </li>
-                <li className="pb-3 sm:pb-4">
-                  <div className="flex flex-col items-start">
-                    <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
-                      <h1>Google Cybersecurity Coursera</h1>
-                    </div>
 
-                    <div className="flex relative left-8 px-2 rounded bg-white">
-                      <p>Coursera</p>
-                    </div>
-                  </div>
-                </li>
                 <li className="pb-3 sm:pb-4">
                   <div className="flex flex-col items-start">
                     <div className="flex space-x-4 rtl:space-x-reverse">
@@ -473,19 +468,6 @@ const AboutPage = () => {
                     <div className="flex space-x-4 rtl:space-x-reverse">
                       <FontAwesomeIcon className="pt-2" icon={faCertificate} />
                       <h1>Meta Back-End Developer</h1>
-                    </div>
-
-                    <div className="flex relative left-8 px-2 rounded bg-white">
-                      <p>Coursera</p>
-                    </div>
-                  </div>
-                </li>
-
-                <li className="pb-3 sm:pb-4">
-                  <div className="flex flex-col items-start">
-                    <div className="flex space-x-4 rtl:space-x-reverse">
-                      <FontAwesomeIcon className="pt-2" icon={faCertificate} />
-                      <h1>Google Cybersecurity Coursera</h1>
                     </div>
 
                     <div className="flex relative left-8 px-2 rounded bg-white">

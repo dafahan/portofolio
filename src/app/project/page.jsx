@@ -114,13 +114,14 @@ const ProjectPage = () => {
               </div>
               <div className="flex flex-col w-[60%] lg:h-[80%] justify-start mt-4">
                 <h6 className="font-medium font-xs my-2">
-                  BRANDING & STRATEGY
+                  DATA & MACHINE LEARNING
                 </h6>
                 <p className="font-light font-xs/[3px]">
-                  A brand is what you believe in. What you stand for. Whether a
-                  new or established business or organization, you can look to
-                  us to best articulate who you are, what you do, and most
-                  importantly, why any of it matters.
+                  Data is the foundation of insight. Whether you&apos;re a
+                  startup or an industry leader, rely on us to convey what your
+                  data signifies, how machine learning empowers decision-making,
+                  and why harnessing this intelligence is pivotal for your
+                  success.
                 </p>
               </div>
             </div>
@@ -132,8 +133,8 @@ const ProjectPage = () => {
                 </h6>
                 <p className="font-light font-xs/[3px]">
                   We know that exceptional website experiences are a blend of
-                  the right message and the right technology. That&apos;s why our
-                  interactive design approach focuses on usability,
+                  the right message and the right technology. That&apos;s why
+                  our interactive design approach focuses on usability,
                   accessibility impact, and achieving results.
                 </p>
               </div>

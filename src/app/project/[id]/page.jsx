@@ -1,7 +1,7 @@
 "use client";
 import { motion, useAnimationControls } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled, RxDot, RxGithubLogo } from "react-icons/rx";
 import { RiCodeView } from "react-icons/ri";
@@ -11,7 +11,6 @@ import Link from "next/link";
 
 function Page() {
   const controls = useAnimationControls();
-  const frame = useRef();
   const pathName = usePathname();
   const id = pathName.split("/")[2];
   const project = items[id];
@@ -25,7 +24,7 @@ function Page() {
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
     controls.start("visible");
-  }, [currentIndex, setCurrentIndex, controls, slides.length]);
+  },[controls,currentIndex,slides.length]);
 
   const nextSlide = useCallback(async () => {
     await controls.start("hidden");
@@ -33,25 +32,11 @@ function Page() {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     controls.start("visible");
-  }, [currentIndex, setCurrentIndex, controls, slides.length]);
+  },[controls,currentIndex,slides.length]);
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
-
-  useEffect(() => {
-    const frameElement = frame.current;
-    if (frameElement) {
-      frameElement.classList.add("fade-animation");
-      const handleTransitionEnd = () => {
-        frameElement.classList.remove("fade-animation");
-      };
-      frameElement.addEventListener("transitionend", handleTransitionEnd);
-      return () => {
-        frameElement.removeEventListener("transitionend", handleTransitionEnd);
-      };
-    }
-  }, [currentIndex]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -104,19 +89,21 @@ function Page() {
         <div className="flex flex-col max-w-[1400px] h-[780px] w-full m-auto px-4 relative group text-center ">
           <motion.div
             variants={wrapperVariants}
-            initial="visible"
             animate={controls}
-            exit="exit"
             className="w-full h-full lg:max-h-[50vh] max-h-[40vh] sm:max-h-[45vh]  rounded-2xl flex justify-center items-center select-none flex"
           >
-            <Image
-              ref={frame}
-              alt=""
-              src={slides[currentIndex]}
-              height={200}
-              width={1000}
-              className="object-contain duration-500 h-full "
-            ></Image>
+            {slides.map((slide, slideIndex) => (
+              <Image
+                key={slideIndex}
+                alt=""
+                src={slides[slideIndex]}
+                height={200}
+                width={1000}
+                className={`object-contain duration-500 h-full ${
+                  currentIndex === slideIndex ? "" : "hidden"
+                }`}
+              ></Image>
+            ))}
           </motion.div>
           {/* Left Arrow */}
           <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 lg:left-20 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
@@ -149,11 +136,11 @@ function Page() {
               {stack.map((item) => (
                 <Image
                   width={80}
-                  height={0}
+                  height={20}
                   key={item}
                   src={item}
                   alt=""
-                  className="hover:scale-110 h-6 object-contain"
+                  className="hover:scale-110 h-6 rounded "
                 ></Image>
               ))}
             </div>
